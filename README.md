@@ -27,9 +27,3 @@ The application follows a **REST API structure**, making it easy to integrate wi
 
 ---
 
-## 🎯 Installation & Setup  
-
-### **1️⃣ Clone the Repository**  
-```sh
-git clone https://github.com/your-username/blog-application.git
-cd blog-application
