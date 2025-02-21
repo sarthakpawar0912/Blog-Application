@@ -5,31 +5,23 @@ import com.blog_application.Repository.PostRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-
 @Service
 public class PostServiceImpl implements PostService{
-
     @Autowired
     private PostRepository  postRepository;
-
-
     public Post savePost(Post post){
            post.setLikeCount(0);
            post.setViewCount(0);
            post.setDate(new Date());
-
        return  postRepository.save(post);
     }
-
 
    public List<Post> getAllPosts(){
         return postRepository.findAll();
    }
-
 
    public  Post getPostById(Long postId){
        Optional<Post> optionalPost=postRepository.findById(postId);
@@ -42,10 +34,7 @@ public class PostServiceImpl implements PostService{
        }
    }
 
-
-
-
-      public void likePost(Long postId){
+   public void likePost(Long postId){
         Optional<Post> optionalPost=postRepository.findById(postId);
         if(optionalPost.isPresent()) {
             Post  post=optionalPost.get();
@@ -57,11 +46,8 @@ public class PostServiceImpl implements PostService{
         }
       }
 
-     public List<Post> searchByName(String name){
+
+      public List<Post> searchByName(String name){
         return postRepository.findAllByNameContaining(name);
      }
-
-
-
-
 }
