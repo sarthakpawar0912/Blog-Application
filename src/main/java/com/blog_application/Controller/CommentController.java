@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/")
 @CrossOrigin("*")
 public class CommentController {
-
-
     @Autowired
     private CommentService commentService;
-
     @PostMapping("comments/create")
     public ResponseEntity<?> createComment(
             @RequestParam Long postId,
@@ -29,8 +26,6 @@ public class CommentController {
         }
     }
 
-
-
     @GetMapping("comments/{postId}")
     public ResponseEntity<?> getCommentsByPostId(@PathVariable Long postId){
         try {
@@ -39,25 +34,4 @@ public class CommentController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Something went Wrong....!!!");
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
