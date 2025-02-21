@@ -9,27 +9,17 @@ import java.util.List;
 @Entity
 @Data
 public class Post {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
     @Column(length = 5000)
     private String content;
-
     private String postedBy;
-
     @Column(length = 5000)
     private String img;
-
     private Date date;
-
     private int likeCount;
-
     private int viewCount;
-
     private List<String>tags;
-
 }
